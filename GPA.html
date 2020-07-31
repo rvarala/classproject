@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+  
+		<title>AUM</title>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+
+		<!-- font-awesome -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<!-- custom -->
+		<link rel="stylesheet" href="css/style.css">
+ 		 
+	</head>
+	<body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
+
+<div style="height: 105px;background: coral;width: 100%;">
+				<div class="navbar-header" style="background-color: blue; ">
+					<a href="index.html" class="navbar-brand"><img src="images/logo.png" class="img-responsive" alt="logo" style="
+    float: left;"></a>
+				</div>
+				<div align="right" ><div align="center">
+					 <h3 align="center" style="padding: 3px; color:black"><strong style="color:#EBFA61;font-size: 40px;"> Auburn University</strong> at Montgomery</h3>
+                </div>
+        </div>
+</div>
+<div class="topnav" id="myTopnav">
+ <a href="index.html">Home</a>
+  <a href="description.html">Description</a>
+  <a href="GPA.html">GPA</a>
+  <a href="formindex.html">Teaching Assistant</a>
+</div>
+<div class="main-content">
+        <div>
+    <br>
+   <label>Your Name:</label>
+   <input type="text" id="name" placeholder="enter your name"><br><br>
+   <center>
+<form name="gpacalcform">
+<table border=2 bgcolor=#9ded7b cellpadding="5" 
+cellspacing="2">
+<th></th>
+<th>gradeLetter</th>
+<th>credits</th>
+<tr>
+<td>Subject 1</td>
+<td><input type=text size=5 id="gr1" align=top 
+maxlength=5></td>
+<td><input type=text size=5 id="cr1" align=top 
+maxlength=5></td>
+</tr>
+<tr>
+<td>Subject 2</td>
+<td><input type=text size=5 id="gr2" align=top 
+maxlength=5></td>
+<td><input type=text size=5 id="cr2" align=top 
+maxlength=5></td>
+</tr>
+<tr>
+<td>subject 3</td>
+<td><input type=text size=5 id="gr3" align=top 
+maxlength=5></td>
+<td><input type=text size=5 id="cr3" align=top 
+maxlength=5></td>
+</tr>
+<tr>
+<td>Subject 4</td>
+<td><input type=text size=5 id="gr4" align=top 
+maxlength=5></td>
+<td><input type=text size=5 id="cr4" align=top 
+maxlength=5></td>
+</tr>
+<tr>
+<td>Subject 5</td>
+<td><input type=text size=5 id="gr5" align=top 
+maxlength=5></td>
+<td><input type=text size=5 id="cr5" align=top 
+maxlength=5></td>
+</tr>
+<tr>
+<td>Subject 6</td>
+<td><input type=text size=5 id="gr6" align=top 
+maxlength=5></td>
+<td><input type=text size=5 id="cr6" align=top 
+maxlength=5></td>
+</tr>
+<tr>
+<td>Subject 7</td>
+<td><input type=text size=5 id="gr7" align=top 
+maxlength=5></td>
+<td><input type=text size=5 id="cr7" align=top 
+maxlength=5></td>
+</tr>
+<tr>
+<td>Subject 8</td>
+<td><input type=text size=5 id="gr8" align=top 
+maxlength=5></td>
+<td><input type=text size=5 id="cr8" align=top 
+maxlength=5></td>
+</tr>
+<tr align=center>
+<td colspan=3><input type="button" value="calculate" 
+name="calcbutton"
+onclick="gpacalc()"></td>
+</tr>
+</table>
+</form>
+<br>
+</center>
+
+<br>
+
+<script lang="javascript" >
+
+<!-- 
+function gpacalc()
+{
+  //alert("hjjkcf");
+//  alert("hjdbj");
+//define valid grades and their values
+var gr = new Array(9); 
+var cr = new Array(9);
+var ingr = new Array(5);
+var incr = new Array(5);
+//alert("hjjkcf");
+// define valid grades and their values
+var grcount = 10; 
+gr[0] = "A+";
+cr[0] = 5;
+gr[1] = "A"; 
+cr[1] = 4; 
+gr[2] = "A-";
+cr[2] = 3.66;
+gr[3] = "B+";
+cr[3] = 3.33;
+gr[4] = "B";
+cr[4] = 3;
+gr[5] = "B-";
+cr[5] = 2.66;
+gr[6] = "C+";
+cr[6] = 2.33;
+gr[7] = "C";
+cr[7] = 2;
+gr[8] = "C-";
+cr[8] = 1.66;
+gr[9] = "D";
+cr[9] = 1;
+gr[10] = "F";
+cr[10] = 0;
+//alert("hjjkcf");
+// retrieve user input
+//ingr --input grade
+//incr --input credit
+ingr[0] = document.getElementById("gr1").value;
+ingr[1] = document.getElementById("gr2").value;
+ingr[2] = document.getElementById("gr3").value;
+ingr[3] = document.getElementById("gr4").value;
+ingr[4] = document.getElementById("gr5").value;
+ingr[5] = document.getElementById("gr6").value;
+ingr[6] = document.getElementById("gr7").value;
+ingr[7] = document.getElementById("gr8").value;
+incr[0] = document.getElementById("cr1").value;
+incr[1] = document.getElementById("cr2").value;
+incr[2] = document.getElementById("cr3").value;
+incr[3] = document.getElementById("cr4").value;
+incr[4] = document.getElementById("cr5").value;
+incr[5] = document.getElementById("cr6").value;
+ingr[6] = document.getElementById("cr7").value;
+ingr[7] = document.getElementById("cr8").value;
+
+// calculate gpa
+var allgr =0;
+var allcr = 0;
+var gpa = 0;
+for (var x = 0; x < 5 + 3; x++)
+        {
+        if (ingr[x] == "") break;
+//      if (isnan(parseint(incr[x]))) alert("error- you did not enter a numeric  credits value for class if the class is worth 0 credits then enter the number 0 in  the field."); 
+        var validgrcheck = 0;
+        for (var xx = 0; xx <= grcount; xx++)
+                {
+                if (ingr[x] == gr[xx])
+                        {
+                        allgr = allgr + (parseInt(incr[x],10) * cr[xx]);
+                        allcr = allcr + parseInt(incr[x],10);
+                        validgrcheck = 1;
+                        break;
+                        }
+                }
+        if (validgrcheck == 0)
+                {
+                alert("error- could not recognize the grade entered for class " + eval(x +  1) + ". please use standard college grades in the form of A A- B+ ...F.");
+                return 0;
+                }
+        }
+
+// this if-check prevents a divide by zero error
+if (allcr == 0)
+        {
+        alert("error- you did not enter any credit values! gpa = n/a");
+        return 0;
+        }
+
+gpa = allgr / allcr;
+
+var name = document.getElementById("name").value;
+alert("Hello " +name+" you GPA is "+eval(gpa));
+
+return 0;
+}
+
+//-->
+   
+
+</script>
+
+ 
+  </div>
+</div>
+
+	<!-- start footer -->
+		<footer>
+			<div>
+					<div>
+						<h3>Copyright &copy; 2020</h3>
+						<small>Designed by Rahul Kumar Varala [+1-0123456789]</small>
+					</div>
+					<div>
+							<a href="#" class="fa fa-facebook"></a>&nbsp; &nbsp;
+							<a href="#" class="fa fa-twitter"></a>&nbsp; &nbsp;
+							<a href="#" class="fa fa-instagram"></a>&nbsp; &nbsp;
+							<a href="#" class="fa fa-pinterest"></a>&nbsp; &nbsp;
+							<a href="#" class="fa fa-google"></a>&nbsp; &nbsp;
+							<a href="#" class="fa fa-github"></a>&nbsp; &nbsp;
+					</div>
+			</div>
+		</footer>
